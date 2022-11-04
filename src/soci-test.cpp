@@ -32,7 +32,7 @@ static const struct option long_options[] = {
   {"database", required_argument, NULL, 'd'},
   {"insert", required_argument, NULL, 'i'},
   {"select", no_argument, NULL, 's'},
-  {"help", no_argument, NULL, 0},
+  {"help", no_argument, NULL, 'h'},
   {NULL, 0, NULL, 0}
 };
 
@@ -116,10 +116,10 @@ int32_t main(int32_t argc, char** argv)
        usage(EXIT_FAILURE);
       }
 
-      // default:
-      // {
-      //   usage(EXIT_FAILURE);
-      // }
+      default:
+      {
+        usage(EXIT_FAILURE);
+      }
     }
   }
 
