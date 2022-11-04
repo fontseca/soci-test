@@ -159,20 +159,27 @@ int32_t main(int32_t argc, char** argv)
 
     for (std::size_t i = 1; i <= records; ++i)
     {
+      std::printf("\nExam #%ld\n\n", i);
+
       exam_t exam;
 
       exam.id = i + examn_count;
 
-      std::cout << "Exam name: ";
+      std::cout << "  Name: ";
       std::getline(std::cin, exam.name);
 
-      std::cout << "Exam price: ";
-      std::cin >> exam.price;
+      std::cout << "  Price: ";
 
-      std::cout << "Is edited? (1/0) ";
+      std::string price;
+
+      std::getline(std::cin, price);
+
+      exam.price = std::atof(price.c_str());
+
+      std::cout << "  Is edited? (1/0) ";
       std::cin >> exam.is_edited;
 
-      std::cout << "Is deleted? (1/0) ";
+      std::cout << "  Is deleted? (1/0) ";
       std::cin >> exam.is_deleted;
 
       std::cin.ignore(std::numeric_limits<int32_t>::max(), '\n');
